@@ -1,11 +1,16 @@
 import './App.css';
+import Title from './components/Title';
+import Filters from './components/Filters';
+import NewTodo from './components/NewTodo';
+import ListTodos from './components/ListTodos';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Simple Todo React App
-      </header>
+      <Title />
+      <Filters />
+      <NewTodo />
+      <ListTodos />
     </div>
   );
 }
