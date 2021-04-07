@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.css';
 import Title from './components/Title';
@@ -8,6 +8,11 @@ import TodoList from './components/TodoList';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [todoList, setTodoList] = useState([]);
+
+  useEffect(() => {
+    setTodoList(todos);
+  }, [todos])
 
   const getTodo = (todo) => {
     setTodos([
@@ -20,7 +25,6 @@ function App() {
   }
 
   const handleCompleted =(todo) => {
-    console.log('handleCompleted', todo);
     setTodos(todos.map(item => {
       if(item === todo) {
         return {
@@ -32,13 +36,30 @@ function App() {
     }))
   }
 
+  const selectAllTodos = () => {
+    setTodoList([...todos]);
+  }
+
+  const selectActiveTodos = () => {
+    setTodoList([...todos.filter(item => item.completed === false)]);
+  }
+
+  const selectCompletedTodos = () => {
+    setTodoList([...todos.filter(item => item.completed === true)]);
+  }
+
+
   return (
     <div className="app">
       <Title />
-      <Filters />
+      <Filters 
+        selectAllTodos={selectAllTodos}
+        selectActiveTodos={selectActiveTodos}
+        selectCompletedTodos={selectCompletedTodos}
+      />
       <NewTodo getTodo={getTodo} />
       <TodoList 
-        todos={todos}
+        todos={todoList}
         handleCompleted={handleCompleted} 
       />
     </div>
