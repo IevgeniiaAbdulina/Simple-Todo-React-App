@@ -1,9 +1,9 @@
 import Todo from './Todo';
 
-const ListTodos = () => {
+const ListTodos = ({todos}) => {
     return ( 
         <div>
-            <Todo />
+            {todos.map((todo, index) => <Todo key= {index} todo={todo} />)}
         </div>
      );
 }

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const NewTodo = () => {
-    const [todo, setTodo] = useState('');
+const NewTodo = ({ getTodo }) => {
     const [value, setValue] = useState('');
 
     const handleChange = (e) => {
@@ -10,7 +9,11 @@ const NewTodo = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTodo(value);
+        if(!value) {
+            return
+        } else {
+            getTodo(value);
+        }
         setValue('');
     }
 
@@ -20,7 +23,6 @@ const NewTodo = () => {
                 <input onChange={handleChange}type='text' value={value} />
                 <input type="submit" value='Add New' />
             </form>
-            {'Todo: ', todo}
         </div>
      );
 }
