@@ -9,6 +9,7 @@ import TodoList from './components/TodoList';
 function App() {
   const [todos, setTodos] = useState([]);
   const [todoList, setTodoList] = useState([]);
+  const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   useEffect(() => {
     setTodoList(todos);
@@ -19,7 +20,8 @@ function App() {
       ...todos,
       {
         title: todo,
-        completed: false
+        completed: false,
+        id: Math.floor(Math.random() * 100)
       }
     ]);
   }
@@ -38,14 +40,25 @@ function App() {
 
   const selectAllTodos = () => {
     setTodoList([...todos]);
+    setShowDeleteButton(false);
   }
 
   const selectActiveTodos = () => {
     setTodoList([...todos.filter(item => item.completed === false)]);
+    setShowDeleteButton(false);
   }
 
   const selectCompletedTodos = () => {
     setTodoList([...todos.filter(item => item.completed === true)]);
+    setShowDeleteButton(true);
+  }
+
+  const deleteOneTodo = (todo) => {
+    setTodos(todos.filter(item => item.id !== todo.id))
+  }
+
+  const deleteAllTodos =() => {
+    setTodos([...todos.filter(item => item.completed === false)]);
   }
 
 
@@ -61,6 +74,9 @@ function App() {
       <TodoList 
         todos={todoList}
         handleCompleted={handleCompleted} 
+        showDeleteButton={showDeleteButton}
+        deleteAllTodos={deleteAllTodos}
+        deleteOneTodo={deleteOneTodo}
       />
     </div>
   );
