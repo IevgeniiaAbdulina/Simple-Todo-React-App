@@ -1,9 +1,12 @@
 import Todo from './Todo';
 
-const ListTodos = ({todos}) => {
+const ListTodos = ({todos, handleCompleted }) => {
     return ( 
         <div>
-            {todos.map((todo, index) => <Todo key= {index} todo={todo} />)}
+            {todos.map((todo, index) => <Todo key= {index} 
+                todo={todo} 
+                handleCompleted={handleCompleted}
+            />)}
         </div>
      );
 }

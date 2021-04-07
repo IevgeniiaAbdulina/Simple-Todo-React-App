@@ -11,12 +11,25 @@ function App() {
 
   const getTodo = (todo) => {
     setTodos([
-          ...todos,
-          {
-            title: todo,
-          completed: false
+      ...todos,
+      {
+        title: todo,
+        completed: false
+      }
+    ]);
+  }
+
+  const handleCompleted =(todo) => {
+    console.log('handleCompleted', todo);
+    setTodos(todos.map(item => {
+      if(item === todo) {
+        return {
+          ...item,
+          completed: !item.completed
         }
-      ]);
+      }
+      return item;
+    }))
   }
 
   return (
@@ -24,7 +37,10 @@ function App() {
       <Title />
       <Filters />
       <NewTodo getTodo={getTodo} />
-      <TodoList todos={todos} />
+      <TodoList 
+        todos={todos}
+        handleCompleted={handleCompleted} 
+      />
     </div>
   );
 }
