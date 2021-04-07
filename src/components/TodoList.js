@@ -1,7 +1,9 @@
+import Todo from './Todo';
+
 const ListTodos = () => {
     return ( 
         <div>
-            <h2>Todos List</h2>
+            <Todo />
         </div>
      );
 }

@@ -1,16 +1,18 @@
+// import { useState, useEffect } from 'react';
+
 import './App.css';
 import Title from './components/Title';
 import Filters from './components/Filters';
 import NewTodo from './components/NewTodo';
-import ListTodos from './components/ListTodos';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Title />
       <Filters />
       <NewTodo />
-      <ListTodos />
+      <TodoList />
     </div>
   );
 }
