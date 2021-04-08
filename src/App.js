@@ -17,13 +17,12 @@ function App() {
     if(!localStorageList) {
       return null
     } else {
-      console.log(JSON.parse(localStorageList))
       setTodos(JSON.parse(localStorageList))
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('todo-list', JSON.stringify(todos))
+    localStorage.setItem('todo-list', JSON.stringify(todos));
     setTodoList(todos);
   }, [todos])
 
@@ -67,10 +66,12 @@ function App() {
 
   const deleteOneTodo = (todo) => {
     setTodos(todos.filter(item => item.id !== todo.id));
+    selectAllTodos();
   }
 
   const deleteAllTodos =() => {
     setTodos([...todos.filter(item => item.completed === false)]);
+    selectAllTodos();
   }
 
 
