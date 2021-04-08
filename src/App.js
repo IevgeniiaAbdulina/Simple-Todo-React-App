@@ -12,6 +12,17 @@ function App() {
   const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   useEffect(() => {
+    const localStorageList = localStorage.getItem('todo-list');
+    if(!localStorageList) {
+      return null
+    } else {
+      console.log(JSON.parse(localStorageList))
+      setTodos(JSON.parse(localStorageList))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('todo-list', JSON.stringify(todos))
     setTodoList(todos);
   }, [todos])
 
@@ -54,7 +65,7 @@ function App() {
   }
 
   const deleteOneTodo = (todo) => {
-    setTodos(todos.filter(item => item.id !== todo.id))
+    setTodos(todos.filter(item => item.id !== todo.id));
   }
 
   const deleteAllTodos =() => {
