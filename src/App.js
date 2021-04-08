@@ -5,6 +5,7 @@ import Title from './components/Title';
 import Filters from './components/Filters';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
+import Attribution from './components/Attribution';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -89,6 +90,7 @@ function App() {
         deleteAllTodos={deleteAllTodos}
         deleteOneTodo={deleteOneTodo}
       />
+      <Attribution />
     </div>
   );
 }
