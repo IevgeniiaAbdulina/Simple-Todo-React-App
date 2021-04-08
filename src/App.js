@@ -6,6 +6,7 @@ import Filters from './components/Filters';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
 import Attribution from './components/Attribution';
+import { Container } from '@material-ui/core';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -76,7 +77,7 @@ function App() {
 
 
   return (
-    <div className="app">
+    <Container maxWidth="sm">
       <Title />
       <Filters 
         selectAllTodos={selectAllTodos}
@@ -92,7 +93,7 @@ function App() {
         deleteOneTodo={deleteOneTodo}
       />
       <Attribution />
-    </div>
+    </Container>
   );
 }
 

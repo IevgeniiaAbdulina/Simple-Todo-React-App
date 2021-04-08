@@ -58,6 +58,7 @@ Users should be able to:
 ### Built With
 
 - [React](https://reactjs.org/)
+- [Material-UI](https://www.npmjs.com/package/@material-ui/core)
 
 ## Features
 
@@ -88,6 +89,20 @@ List of articles that helps me to complete the project:
 - [How to use localStorage with React](https://programmingwithmosh.com/react/localstorage-react/)
 - [React.js cheatsheet](https://devhints.io/react)
 - [React hooks basics](https://cheatsheet-maker.herokuapp.com/sheet/6066e385b180158f62e8598b)
+
+-[Material-UI](https://material-ui.com/getting-started/installation/#npm)
+
+```bash
+# Install dependencies
+$ npm install @material-ui/core
+```
+
+-[Material-UI icons](https://material-ui.com/getting-started/installation/#svg-icons)
+
+```bash
+# Install dependencies
+$ npm install @material-ui/icons
+```
 
 ## Contact
 

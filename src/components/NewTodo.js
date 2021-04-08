@@ -1,3 +1,4 @@
+import { Button, Grid, TextField } from "@material-ui/core";
 import { useState } from "react";
 
 const NewTodo = ({ getTodo }) => {
@@ -18,12 +19,30 @@ const NewTodo = ({ getTodo }) => {
     }
 
     return ( 
-        <div style={{margin: '20px'}}>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange}type='text' value={value} />
-                <input type="submit" value='Add New' />
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+                <Grid item xs={8}>
+                    <TextField 
+                        variant="outlined"
+                        fullWidth
+                        size="small"
+                        onChange={handleChange} 
+                        type='text' 
+                        value={value} />
+                </Grid>
+                <Grid item xs={4}>
+                    <Button 
+                        type="submit" 
+                        variant='contained' 
+                        color='primary'
+                        size="medium"
+                        >
+                        Add New
+                    </Button>
+                </Grid>
+                
+            </Grid>
+        </form>
      );
 }
  

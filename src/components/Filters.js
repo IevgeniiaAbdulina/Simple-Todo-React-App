@@ -1,19 +1,18 @@
+import { Button, ButtonGroup } from "@material-ui/core";
+
 const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos }) => {
     return ( 
-        <div style={{display: 'flex', margin: '20px'}}>
-           <div className='tab active'
-               style={{margin: '0 20px'}}
+        <ButtonGroup variant="text" color="primary" aria-label="text primary button group" >
+           <Button className='tab active'
                onClick={selectAllTodos}
-            >All</div>
-           <div className='tab active'
-               style={{margin: '0 20px'}}
+            >All</Button>
+           <Button className='tab active'
                onClick={selectActiveTodos}
-            >Active</div>
-           <div className='tab active'
-               style={{margin: '0 20px'}}
+            >Active</Button>
+           <Button className='tab active'
                onClick={selectCompletedTodos}
-            >Completed</div>
-        </div>
+            >Completed</Button>
+        </ButtonGroup>
      );
 }
  
