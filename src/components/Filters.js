@@ -1,18 +1,26 @@
-import { Button, ButtonGroup } from "@material-ui/core";
+import { Tab, Tabs } from "@material-ui/core";
+import { useState } from "react";
 
 const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos }) => {
+
+    const [value, setValue] = useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    }
+    
     return ( 
-        <ButtonGroup variant="text" color="primary" aria-label="text primary button group" >
-           <Button className='tab active'
-               onClick={selectAllTodos}
-            >All</Button>
-           <Button className='tab active'
-               onClick={selectActiveTodos}
-            >Active</Button>
-           <Button className='tab active'
-               onClick={selectCompletedTodos}
-            >Completed</Button>
-        </ButtonGroup>
+        <Tabs 
+            value={value}
+            onChange={handleChange}
+            indicatorColor='primary'
+            textColor='primary'
+            centered
+        >
+            <Tab label='All' onClick={selectAllTodos} />
+            <Tab label='Active' onClick={selectActiveTodos} />
+            <Tab label='Completed' onClick={selectCompletedTodos} />
+        </Tabs>
      );
 }
  

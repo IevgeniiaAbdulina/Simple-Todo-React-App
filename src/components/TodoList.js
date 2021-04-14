@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import Todo from './Todo';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,10 @@ const ListTodos = ({todos, handleCompleted, showDeleteButton, deleteAllTodos, de
                 deleteOneTodo={deleteOneTodo}
                 showDeleteButton={showDeleteButton}
             />)}
-            {showDeleteButton && <button type="submit" onClick={deleteAllTodos}>Delete All</button>}
+            {showDeleteButton && <Button type="submit" 
+                        variant='contained' 
+                        color='primary' 
+                        onClick={deleteAllTodos}>Delete All Todos</Button>}
             
 
         </div>
