@@ -1,4 +1,4 @@
-import { Button, makeStyles } from '@material-ui/core';
+import { Box, Button, makeStyles } from '@material-ui/core';
 import Todo from './Todo';
 
 const useStyles = makeStyles((theme) => ({
@@ -6,11 +6,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
+        marginBottom: theme.spacing(4),
         '& > *': {
         margin: theme.spacing(1),
         padding: theme.spacing(1),
-        width: theme.spacing(58),
-        height: theme.spacing(10),
         overflow: 'hidden'
         },
     }
@@ -20,20 +19,23 @@ const ListTodos = ({todos, handleCompleted, showDeleteButton, deleteAllTodos, de
     const classes = useStyles(); 
     
     return ( 
-        <div className={classes.root}>
-            {todos.map((todo) => <Todo key= {todo.id} 
-                todo={todo} 
-                handleCompleted={handleCompleted}
-                deleteOneTodo={deleteOneTodo}
-                showDeleteButton={showDeleteButton}
-            />)}
-            {showDeleteButton && <Button type="submit" 
-                        variant='contained' 
-                        color='primary' 
-                        onClick={deleteAllTodos}>Delete All Todos</Button>}
-            
-
-        </div>
+        <Box flexGrow={1} className={classes.root}>
+            {todos.map((todo) => 
+                <Todo key= {todo.id} 
+                    todo={todo} 
+                    handleCompleted={handleCompleted}
+                    deleteOneTodo={deleteOneTodo}
+                    showDeleteButton={showDeleteButton}
+                />)}
+            {showDeleteButton && 
+            <Button type="submit" 
+                variant='contained' 
+                color='primary' 
+                onClick={deleteAllTodos}
+            >
+                Delete All Completed Todos
+            </Button>}
+        </Box>
      );
 }
  

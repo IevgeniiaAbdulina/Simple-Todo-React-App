@@ -77,22 +77,24 @@ function App() {
 
 
   return (
-    <Container maxWidth="sm">
-      <Title />
-      <Filters 
-        selectAllTodos={selectAllTodos}
-        selectActiveTodos={selectActiveTodos}
-        selectCompletedTodos={selectCompletedTodos}
-      />
-      <NewTodo getTodo={getTodo} />
-      <TodoList 
-        todos={todoList}
-        handleCompleted={handleCompleted} 
-        showDeleteButton={showDeleteButton}
-        deleteAllTodos={deleteAllTodos}
-        deleteOneTodo={deleteOneTodo}
-      />
-      <Attribution />
+    <Container component="main" maxWidth="sm">
+      <div style={{ marginTop: '10%'}}>
+        <Title />
+        <Filters 
+          selectAllTodos={selectAllTodos}
+          selectActiveTodos={selectActiveTodos}
+          selectCompletedTodos={selectCompletedTodos}
+        />
+        <NewTodo getTodo={getTodo} />
+        <TodoList 
+          todos={todoList}
+          handleCompleted={handleCompleted} 
+          showDeleteButton={showDeleteButton}
+          deleteAllTodos={deleteAllTodos}
+          deleteOneTodo={deleteOneTodo}
+        />
+        <Attribution />
+      </div>
     </Container>
   );
 }

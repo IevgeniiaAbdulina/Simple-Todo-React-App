@@ -1,4 +1,4 @@
-import { Checkbox, IconButton, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, Checkbox, IconButton, makeStyles, Paper, Typography } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useEffect, useState } from "react";
 
@@ -9,17 +9,17 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         flexWrap: 'wrap',
         margin: {
-            margin: theme.spacing(1),
+            margin: theme.spacing(1, 0),
           }
     },
     extendedIcon: {
       marginRight: theme.spacing(1),
     },
+    typography: {
+        margin: '0 20',
+        alignSelf: 'center',
+    }
   }));
-
-  const contentStyle = {
-      display: 'flex',
-  }
 
 const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
     const classes = useStyles();
@@ -36,7 +36,7 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
   
     return ( 
         <Paper className={classes.root}>
-            <div style={contentStyle}>
+            <Box display="flex" p={1} bgcolor="background.paper">
                 <Checkbox
                     color="primary"
                     checked={checked}
@@ -44,15 +44,22 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
                     onChange={() => handleCompleted(todo)}
                 />
                 <Typography 
-                    style={{ margin: '0 20px', alignSelf: 'center'}}
+                    className={classes.typography}
                     variant="h5" 
-                    component="h2">
-                        {todo.title}
+                    component="h2"
+                >
+                    {todo.title}
                 </Typography>
-            </div>
-            {showDeleteButton && <IconButton onClick={() => deleteOneTodo(todo)} aria-label="delete" className={classes.margin}>
-                <DeleteIcon fontSize="small" />
-            </IconButton>}
+            </Box>
+            <Box p={1}>
+                {showDeleteButton && 
+                <IconButton 
+                    onClick={() => deleteOneTodo(todo)} 
+                    aria-label="delete" 
+                    className={classes.margin}>
+                    <DeleteIcon fontSize="small" />
+                </IconButton>}
+            </Box>
         </Paper>
      );
 }

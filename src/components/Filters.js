@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "@material-ui/core";
+import { Container, Tab, Tabs } from "@material-ui/core";
 import { useState } from "react";
 
 const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos }) => {
@@ -10,17 +10,19 @@ const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos }) =>
     }
     
     return ( 
-        <Tabs 
-            value={value}
-            onChange={handleChange}
-            indicatorColor='primary'
-            textColor='primary'
-            centered
-        >
-            <Tab label='All' onClick={selectAllTodos} />
-            <Tab label='Active' onClick={selectActiveTodos} />
-            <Tab label='Completed' onClick={selectCompletedTodos} />
-        </Tabs>
+        <Container maxWidth="sm">
+            <Tabs 
+                value={value}
+                onChange={handleChange}
+                indicatorColor='primary'
+                textColor='primary'
+                centered
+            >
+                <Tab label='All' onClick={selectAllTodos} />
+                <Tab label='Active' onClick={selectActiveTodos} />
+                <Tab label='Completed' onClick={selectCompletedTodos} />
+            </Tabs>
+        </Container>
      );
 }
  
