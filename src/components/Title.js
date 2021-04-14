@@ -1,8 +1,17 @@
+import { Container, Typography } from "@material-ui/core";
+
 const Title = () => {
     return ( 
-        <div>
-            <h2>Jane's <span>T O D O</span></h2>
-        </div>
+        <Container maxWidth="sm">
+            <Typography 
+                component="h1" 
+                variant="h2" 
+                align="center"
+                color="textPrimary"
+                gutterBottom >
+                Jane's <span>T O D O</span>
+            </Typography>
+        </Container>
      );
 }
  
