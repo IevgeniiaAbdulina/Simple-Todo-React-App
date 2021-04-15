@@ -28,7 +28,8 @@ const ListTodos = ({todos, handleCompleted, showDeleteButton, deleteAllTodos, de
                     showDeleteButton={showDeleteButton}
                 />)}
             {showDeleteButton && 
-            <Button type="submit" 
+            <Button 
+                type="submit" 
                 variant='contained' 
                 color='primary' 
                 onClick={deleteAllTodos}

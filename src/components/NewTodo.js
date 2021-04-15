@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
         margin: theme.spacing(3, 0),
       },
-      button: {
-          padding: '6px 24px'
-      }
 }));
 
 const NewTodo = ({ getTodo }) => {
@@ -35,7 +32,7 @@ const NewTodo = ({ getTodo }) => {
     return ( 
         <form className={classes.form} onSubmit={handleSubmit}>
             <Grid container spacing={2} className={classes.container}>
-                <Grid item xs={10}>
+                <Grid item xs={12} sm={8}>
                     <TextField 
                         variant="outlined"
                         fullWidth
@@ -45,15 +42,16 @@ const NewTodo = ({ getTodo }) => {
                         value={value}
                     />
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={12} sm={4}>
                     <Button 
+                        fullWidth
                         type="submit" 
                         variant='contained' 
                         color='primary'
                         size="medium"
                         className={classes.button}
                     >
-                        Add
+                        Add new
                     </Button>
                 </Grid>
             </Grid>
