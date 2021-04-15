@@ -12,6 +12,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [todoList, setTodoList] = useState([]);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showNewTodo, setShowNewTodo] = useState(true);
 
   useEffect(() => {
     const localStorageList = localStorage.getItem('todo-list');
@@ -53,16 +54,19 @@ function App() {
   const selectAllTodos = () => {
     setTodoList([...todos]);
     setShowDeleteButton(false);
+    setShowNewTodo(true);
   }
 
   const selectActiveTodos = () => {
     setTodoList([...todos.filter(item => item.completed === false)]);
     setShowDeleteButton(false);
+    setShowNewTodo(true);
   }
 
   const selectCompletedTodos = () => {
     setTodoList([...todos.filter(item => item.completed === true)]);
     setShowDeleteButton(true);
+    setShowNewTodo(false);
   }
 
   const deleteOneTodo = (todo) => {
@@ -85,7 +89,10 @@ function App() {
           selectActiveTodos={selectActiveTodos}
           selectCompletedTodos={selectCompletedTodos}
         />
-        <NewTodo getTodo={getTodo} />
+        <NewTodo 
+          getTodo={getTodo} 
+          showNewTodo={showNewTodo}
+        />
         <TodoList 
           todos={todoList}
           handleCompleted={handleCompleted} 

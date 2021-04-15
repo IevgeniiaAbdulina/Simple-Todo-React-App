@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-const NewTodo = ({ getTodo }) => {
+const NewTodo = ({ getTodo, showNewTodo }) => {
     const classes = useStyles();
     const [value, setValue] = useState('');
 
@@ -30,32 +30,36 @@ const NewTodo = ({ getTodo }) => {
     }
 
     return ( 
-        <form className={classes.form} onSubmit={handleSubmit}>
-            <Grid container spacing={2} className={classes.container}>
-                <Grid item xs={12} sm={8}>
-                    <TextField 
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                        onChange={handleChange} 
-                        type='text' 
-                        value={value}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Button 
-                        fullWidth
-                        type="submit" 
-                        variant='contained' 
-                        color='primary'
-                        size="medium"
-                        className={classes.button}
-                    >
-                        Add new
-                    </Button>
-                </Grid>
-            </Grid>
-        </form>
+        <>
+            {showNewTodo && 
+                <form className={classes.form} onSubmit={handleSubmit}>
+                    <Grid container spacing={2} className={classes.container}>
+                        <Grid item xs={12} sm={8}>
+                            <TextField 
+                                variant="outlined"
+                                fullWidth
+                                size="small"
+                                onChange={handleChange} 
+                                type='text' 
+                                value={value}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <Button 
+                                fullWidth
+                                type="submit" 
+                                variant='contained' 
+                                color='primary'
+                                size="medium"
+                                className={classes.button}
+                            >
+                                Add new
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            }
+        </>
      );
 }
  
