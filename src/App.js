@@ -14,6 +14,14 @@ function App() {
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const [showNewTodo, setShowNewTodo] = useState(true);
 
+  // Handle Tab Changes
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  }
+  // ___________________
+
   useEffect(() => {
     const localStorageList = localStorage.getItem('todo-list');
     if(!localStorageList) {
@@ -48,13 +56,15 @@ function App() {
         }
       }
       return item;
-    }))
+    }));
+    selectAllTodos();
   }
 
   const selectAllTodos = () => {
     setTodoList([...todos]);
     setShowDeleteButton(false);
     setShowNewTodo(true);
+    setValue(0);
   }
 
   const selectActiveTodos = () => {
@@ -88,6 +98,8 @@ function App() {
           selectAllTodos={selectAllTodos}
           selectActiveTodos={selectActiveTodos}
           selectCompletedTodos={selectCompletedTodos}
+          handleChange={handleChange}
+          value={value}
         />
         <NewTodo 
           getTodo={getTodo} 

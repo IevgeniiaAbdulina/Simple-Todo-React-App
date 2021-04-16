@@ -1,13 +1,13 @@
 import { Container, Tab, Tabs } from "@material-ui/core";
-import { useState } from "react";
+// import { useState } from "react";
 
-const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos }) => {
+const Filters = ({ selectAllTodos, selectActiveTodos, selectCompletedTodos, handleChange, value }) => {
 
-    const [value, setValue] = useState(0);
+    // const [value, setValue] = useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    }
+    // const handleChange = (event, newValue) => {
+    //     setValue(newValue);
+    // }
     
     return ( 
         <Container maxWidth="sm">

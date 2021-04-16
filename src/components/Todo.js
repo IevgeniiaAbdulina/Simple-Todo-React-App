@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
     const classes = useStyles();
-  const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(false);
 
-  useEffect(() => {
-      if(!todo.completed) {
-        setChecked(false);
-      } else {
-          setChecked(true);
-      }
-  }, [todo.completed])
+    useEffect(() => {
+        if(!todo.completed) {
+            setChecked(false);
+        } else {
+            setChecked(true);
+        }
+    }, [todo.completed])
    
   
     return ( 
@@ -61,7 +61,7 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
                 </IconButton>}
             </Box>
         </Paper>
-     );
+    );
 }
  
 export default Todo;
