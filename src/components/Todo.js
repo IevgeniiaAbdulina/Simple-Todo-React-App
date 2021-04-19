@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignContent: 'center',
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
         margin: {
             margin: theme.spacing(1, 0),
           }
@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     typography: {
         margin: '0 20',
         alignSelf: 'center',
+    },
+    box: {
+        overflow: 'hidden'
     }
   }));
 
@@ -36,7 +39,7 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
   
     return ( 
         <Paper className={classes.root}>
-            <Box display="flex" p={1} bgcolor="background.paper">
+            <Box display="flex" p={1} bgcolor="background.paper" className={classes.box}>
                 <Checkbox
                     color="primary"
                     checked={checked}

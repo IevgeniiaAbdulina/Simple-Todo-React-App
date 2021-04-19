@@ -8,9 +8,8 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'nowrap',
         marginBottom: theme.spacing(4),
         '& > *': {
-        margin: theme.spacing(1),
-        padding: theme.spacing(1),
-        overflow: 'hidden'
+            margin: theme.spacing(1),
+            padding: theme.spacing(1),
         },
     }
 }))
