@@ -1,4 +1,4 @@
-import { Box, Checkbox, IconButton, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, CardActionArea, Checkbox, IconButton, makeStyles, Paper, Typography } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useEffect, useState } from "react";
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     box: {
         overflow: 'hidden'
-    }
+    },
   }));
 
 const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
@@ -38,32 +38,35 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
    
   
     return ( 
-        <Paper className={classes.root}>
-            <Box display="flex" p={1} bgcolor="background.paper" className={classes.box}>
-                <Checkbox
-                    color="primary"
-                    checked={checked}
-                    inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-                    onChange={() => handleCompleted(todo)}
-                />
-                <Typography 
-                    className={classes.typography}
-                    variant="h5" 
-                    component="h2"
-                >
-                    {todo.title}
-                </Typography>
-            </Box>
-            <Box p={1}>
-                {showDeleteButton && 
-                <IconButton 
-                    onClick={() => deleteOneTodo(todo)} 
-                    aria-label="delete" 
-                    className={classes.margin}>
-                    <DeleteIcon fontSize="small" />
-                </IconButton>}
-            </Box>
-        </Paper>
+        <CardActionArea style={{ padding: 0}}>
+            <Paper className={classes.root}>
+                <Box display="flex" p={1} bgcolor="background.paper" className={classes.box}>
+                    <Checkbox
+                        color="primary"
+                        checked={checked}
+                        inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
+                        onChange={() => handleCompleted(todo)}
+                    />
+                    <Typography 
+                        className={classes.typography}
+                        variant="h5" 
+                        component="h2"
+                    >
+                        {todo.title}
+                    </Typography>
+                </Box>
+                <Box p={1}>
+                    {showDeleteButton && 
+                    <IconButton 
+                        onClick={() => deleteOneTodo(todo)} 
+                        aria-label="delete" 
+                        className={classes.margin}
+                    >
+                        <DeleteIcon fontSize="small" />
+                    </IconButton>}
+                </Box>
+            </Paper>
+        </CardActionArea>
     );
 }
  
