@@ -9,6 +9,15 @@ const useStyles = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
         margin: theme.spacing(3, 0),
       },
+    button: {
+        background:  'linear-gradient(to right top, #D65DB1, #FF6F91, #FF9671)',
+        borderRadius: 24,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(255, 111, 145, .3)',
+    }
 }));
 
 const NewTodo = ({ getTodo, showNewTodo }) => {

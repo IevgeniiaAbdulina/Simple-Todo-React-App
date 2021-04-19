@@ -11,6 +11,15 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
             padding: theme.spacing(1),
         },
+    },
+    button: {
+        background:  'linear-gradient(to right top, #D65DB1, #FF6F91, #FF9671)',
+        borderRadius: 24,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(255, 111, 145, .3)',
     }
 }))
 
@@ -28,6 +37,7 @@ const ListTodos = ({todos, handleCompleted, showDeleteButton, deleteAllTodos, de
                 />)}
             {showDeleteButton && 
             <Button 
+                className={classes.button}
                 type="submit" 
                 variant='contained' 
                 color='primary' 
