@@ -38,7 +38,7 @@ const Todo = ({todo, handleCompleted, showDeleteButton, deleteOneTodo }) => {
    
   
     return ( 
-        <CardActionArea style={{ padding: 0}}>
+        <CardActionArea style={{ margin: '8px 0', padding: 0}}>
             <Paper className={classes.root} variant="outlined">
                 <Box display="flex" p={1} bgcolor="background.paper" className={classes.box}>
                     <Checkbox
