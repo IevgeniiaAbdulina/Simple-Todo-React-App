@@ -35,15 +35,9 @@
 <!-- OVERVIEW -->
 
 ## Overview
-<!-- 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png) -->
 
-<!-- Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :) -->
+<img src="/src/img/desktop-screenshot.png" width="600">
+<img src="/src/img/mobile-screenshot.png" width="360">
 
 ### The challenge
 
@@ -53,7 +47,7 @@ Users should be able to:
 - I can complete a task
 - I can toggle between All, Active and Completed
 - I can remove one or all tasks under the Completed tab
-- Store the data in local storage that when I refresh the page I can still see my progress  (optional)
+- Store the data in local storage that when I refresh the page I can still see my progress (optional)
 
 ### Built With
 
@@ -89,8 +83,7 @@ List of articles that helps me to complete the project:
 - [How to use localStorage with React](https://programmingwithmosh.com/react/localstorage-react/)
 - [React.js cheatsheet](https://devhints.io/react)
 - [React hooks basics](https://cheatsheet-maker.herokuapp.com/sheet/6066e385b180158f62e8598b)
-
--[Material-UI](https://material-ui.com/getting-started/installation/#npm)
+- [Material-UI](https://material-ui.com/getting-started/installation/#npm)
 
 ```bash
 # Install dependencies
