@@ -46,6 +46,7 @@ const NewTodo = ({ getTodo, showNewTodo }) => {
                         <Grid item xs={12} sm={8}>
                             <TextField 
                                 variant="outlined"
+                                style={{backgroundColor: 'white'}}
                                 fullWidth
                                 size="small"
                                 onChange={handleChange} 
